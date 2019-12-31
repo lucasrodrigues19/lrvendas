@@ -1,32 +1,32 @@
-package lrvendas.modelo;
+package lrvendas.modelo.entites;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
-public class Cliente implements ISetupNotaFiscal, ISetupPedido {
+public class Cliente implements ISetupNotaFiscal{
 
 	private Integer cliid;
 	private String clinome;
 	private String clicpf;
-	private List<Pedido> pedidos = new ArrayList<Pedido>();
 	private List<NotaFiscal> notaFiscal = new ArrayList<NotaFiscal>();
 	
 
 	
-	public Cliente(Integer cliid, String clinome, String clicpf, List<Pedido> pedidos, List<NotaFiscal> notaFiscal) {
-		this.cliid = cliid;
+	public Cliente(String clinome, String clicpf) {
 		this.clinome = clinome;
 		this.clicpf = clicpf;
-		this.pedidos = pedidos;
-		this.notaFiscal = notaFiscal;
 	}
-
+	public Cliente() {
+		
+	}
 
 	public Integer getCliid() {
 		return cliid;
 	}
 
+	public void setCliid(Integer cliid) {
+		this.cliid = cliid;
+	}
 	public String getClinome() {
 		return clinome;
 	}
@@ -42,9 +42,6 @@ public class Cliente implements ISetupNotaFiscal, ISetupPedido {
 		this.clicpf = clicpf;
 	}
 
-	public List<Pedido> getPedidos() {
-		return pedidos;
-	}
 
 	public List<NotaFiscal> getNotaFiscal() {
 		return notaFiscal;
@@ -60,16 +57,7 @@ public class Cliente implements ISetupNotaFiscal, ISetupPedido {
 		this.getNotaFiscal().remove(notaFiscal);
 	}
 
-	@Override
-	public void addPedido(Pedido pedido) {
-		this.getPedidos().add(pedido);
-	}
-
-
-	@Override
-	public void removePedido(Pedido pedido) {
-		this.getPedidos().remove(pedido);		
-	}
+	
 
 
 	

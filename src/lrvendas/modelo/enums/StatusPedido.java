@@ -4,8 +4,7 @@ public enum StatusPedido {
 
 	ANDAMENTO,
 	PAGAMENTO_PENDENTE,
-	PAGO,
-	PEDIDO_CONFIRMADO;
+	PAGO;
 	
 	
 }

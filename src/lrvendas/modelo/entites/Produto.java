@@ -1,4 +1,4 @@
-package lrvendas.modelo;
+package lrvendas.modelo.entites;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,12 +12,10 @@ public class Produto implements ISetupPedido {
      private List<Pedido> pedidos= new ArrayList<Pedido>();
 	
 	
-	public Produto(Integer proid, Integer progrupo, Double propreco, String prodesc, List<Pedido> pedidos) {
-		this.proid = proid;
+	public Produto(Integer progrupo, Double propreco, String prodesc) {
 		this.progrupo = progrupo;
 		this.propreco = propreco;
 		this.prodesc = prodesc;
-		this.pedidos = pedidos;
 	}
 
 	public Produto() {
@@ -26,6 +24,10 @@ public class Produto implements ISetupPedido {
 
 	public Integer getProid() {
 		return proid;
+	}
+
+	public void setProid(Integer proid) {
+		this.proid = proid;
 	}
 
 	public Integer getProgrupo() {
